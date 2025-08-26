@@ -7,16 +7,16 @@
  * Plugin URI: 				https://www.enriquejros.com/plugins/
  * Author: 					Enrique J. Ros
  * Author URI: 				https://www.enriquejros.com/
- * Version: 				4.0.1
+ * Version: 				4.0.2
  * License: 				GNU General Public License v2 or later
  * License URI: 			http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: 			add-to-cart-custom-text
  * Domain Path: 			/lang/
  * Requires at least:		6.0
- * Tested up to:			6.5
+ * Tested up to:			6.9
  * Requires PHP: 			7.3
- * WC requires at least:	8.0
- * WC tested up to: 		9.0
+ * WC requires at least:	9.0
+ * WC tested up to: 		10.1
  *
  * @author 					Enrique J. Ros
  * @link              		https://www.enriquejros.com
@@ -26,7 +26,7 @@
  */
 
 /*
-    Copyright 2016 - 2024 Enrique J. Ros (email: enrique@enriquejros.com)
+    Copyright 2016 - 2025 Enrique J. Ros (email: enrique@enriquejros.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 

@@ -3,8 +3,8 @@ Contributors: enriquejros
 Donate link: https://www.paypal.me/enriquejros?country.x=US&locale.x=en_US
 Tags: add to cart, woocommerce, button, change
 Requires at least: 6.0
-Tested up to: 6.5
-Stable tag: 4.0.1
+Tested up to: 6.9
+Stable tag: 4.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,10 @@ Yes, you can translate it into your language. They're just a few sentences.
 2. Options page in *Settings > Add to Cart Button*
 
 == Changelog ==
+
+= 4.0.2 =
+* Support for WordPress 6.9
+* Support for WooCommerce 10.1
 
 = 4.0.1 =
 * Support for WordPress 6.5
