@@ -171,38 +171,10 @@ if (!class_exists ('Opciones_EJR_Add_To_Cart')) :
 
 					<ul>
 
-						<?php if ('es_ES' == $idioma || 'ca_ES' == $idioma) { ?>
-
-							<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-provincias-envios-woocommerce/">Plugin para seleccionar a qué provincias se realizan envíos (España)</a></li>
-							<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-pedir-nif-pedidos-woocommerce/">Plugin para pedir el NIF/CIF en los pedidos</a> <?php if (class_exists ('WPO_WCPDF')) echo '(compatible con WooCommerce PDF Invoices & Packing Slips, permite insertar el NIF en la factura)'; ?></li>
-
-						<?php } elseif ('es_AR' == $idioma) { ?>
-
-							<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-envio-provincias-argentina-woocommerce/">Plugin para seleccionar a qué provincias se realizan envíos (Argentina)</a></li>
-
-						<?php } elseif ('es_MX' == $idioma) { ?>
-
-							<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-envio-provincias-mexico-woocommerce/">Plugin para seleccionar a qué provincias se realizan envíos (México)</a></li>
-
-						<?php } elseif ('es_CO' == $idioma) { ?>
-
-							<li><a target="_blank" href="https://www.enriquejros.com/plugins/anadir-departamentos-colombia-woocommerce/">Añadir departamentos de Colombia a WooCommerce</a></li>
-
-						<?php } elseif ('es_UY' == $idioma) { ?>
-
-							<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-anadir-los-departamentos-uruguay-woocommerce/">Añadir departamentos de Uruguay a WooCommerce</a></li>
-
-						<?php } ?>
-
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-contenido-email-pedido-woocommerce/">Plugin para añadir contenido personalizado en el email del pedido</a></li>
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-personalizar-checkout-woocommerce/">Plugin para personalizar campos del checkout</a></li>
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-zonas-envio-personalizadas-woocommerce/">Plugin para personalizar los estados/provincias/departamentos</a></li>
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-insertar-pixel-facebook-woocommerce/">Plugin para insertar el píxel de Facebook en WooCommerce</a></li>
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-pestanas-mi-cuenta-woocommerce/">Plugin para añadir pestañas personalizadas en la página <i>Mi cuenta</i></a></li>
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-directo-checkout-sin-carrito/">Plugin para ir directo al checkout sin pasar por el carrito</a></li>
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/quitar-intervalo-precios-productos-variables/">Plugin para quitar el intervalo de precios en productos variables</a></li>
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-envio-gratuito-woocommerce/">Plugin para ocultar las formas de envío si está disponible el envío gratuito</a></li>
-						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-pedido-minimo-woocommerce/">Plugin para establecer un pedido mínimo</a></li>
+						<li><a target="_blank" href="https://www.enriquejros.com/plugins/estados-pedido-notificacion-woocommerce/">Plugin para estados de pedido pesonalizados con notificaciones por correo electrónico y Telegram.</a></li>
+						<li><a target="_blank" href="https://www.enriquejros.com/plugins/campos-personalizados-registro-woocommerce/">Plugin para añadir campos personalizados al registro de WooCommerce.</a></li>
+						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-zonas-envio-personalizadas-woocommerce/">Plugin para personalizar los estados/provincias/departamentos.</a></li>
+						<li><a target="_blank" href="https://www.enriquejros.com/plugins/plugin-pedido-minimo-woocommerce/">Plugin para establecer un pedido mínimo.</a></li>
 						
 					</ul>
 

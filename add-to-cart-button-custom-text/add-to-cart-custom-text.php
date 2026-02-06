@@ -7,16 +7,17 @@
  * Plugin URI: 				https://www.enriquejros.com/plugins/
  * Author: 					Enrique J. Ros
  * Author URI: 				https://www.enriquejros.com/
- * Version: 				4.0.2
- * License: 				GNU General Public License v2 or later
- * License URI: 			http://www.gnu.org/licenses/gpl-2.0.html
+ * Version: 				4.1.0
  * Text Domain: 			add-to-cart-custom-text
  * Domain Path: 			/lang/
  * Requires at least:		6.0
  * Tested up to:			6.9
  * Requires PHP: 			7.3
  * WC requires at least:	9.0
- * WC tested up to: 		10.1
+ * WC tested up to: 		10.3
+ * Requires Plugins:		woocommerce
+ * License: 				GNU General Public License v2 or later
+ * License URI: 			http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @author 					Enrique J. Ros
  * @link              		https://www.enriquejros.com
@@ -54,7 +55,6 @@ if (!class_exists ('Plugin_EJR_Add_To_Cart')) :
 
 		private function __construct () {
 
-			$this->nombre   = __('Add to Cart Button Custom Text', 'add-to-cart-custom-text');
 			$this->domain   = 'add-to-cart-custom-text';
 			$this->gestor   = 'options-general.php?page=add-to-cart';
 			$this->campos   = false;
@@ -62,8 +62,7 @@ if (!class_exists ('Plugin_EJR_Add_To_Cart')) :
 			$this->clases   = ['EJR_Add_To_Cart', 'Opciones_EJR_Add_To_Cart'];
 			$this->dirname  = dirname (__FILE__);
 
-			$this->carga_archivos($this->archivos, $this->campos);
-			$this->carga_traducciones($this->domain);
+			$this->carga_archivos();
 
 			register_activation_hook (__FILE__, function () {
 				set_transient ('add-to-cart-custom-text-activado', true, 5);
@@ -81,9 +80,9 @@ if (!class_exists ('Plugin_EJR_Add_To_Cart')) :
 			_doing_it_wrong (__FUNCTION__, sprintf (__('You cannot clone instances of %s.', 'add-to-cart-custom-text'), get_class ($this)), '2.1.2');
 			}
 
-		public function carga_archivos ($archivos, $campos) {
+		public function carga_archivos () {
 
-			foreach ($archivos as $archivo)
+			foreach ($this->archivos as $archivo)
 				require (sprintf ('%s/%s.php', $this->dirname, $archivo));
 			}
 
@@ -94,28 +93,11 @@ if (!class_exists ('Plugin_EJR_Add_To_Cart')) :
 				}
 
 		public function arranca_plugin () {
+			
+			$this->nombre = __('Add to Cart Button Custom Text', 'add-to-cart-custom-text');
 
-			if ($this->woocommerce_activo())
-				foreach ($this->clases as $clase)
-					new $clase;
-			}
-
-		private function woocommerce_activo () {
-
-			if (!class_exists ('WooCommerce')) {
-
-				add_action ('admin_notices', function () {
-					?>
-						<div class="notice notice-error is-dismissible">
-							<p><?php printf (__('The plugin %s needs WooCommerce to be active in order to work. Please, activate WooCommerce first.', 'add-to-cart-custom-text'), '<i>' . $this->nombre . '</i>'); ?></p>
-						</div>
-					<?php
-					}, 10);
-
-				return false;
-				}
-
-			return true;
+			foreach ($this->clases as $clase)
+				new $clase;
 			}
 
 		public function aviso_ayuda () {
@@ -129,15 +111,6 @@ if (!class_exists ('Plugin_EJR_Add_To_Cart')) :
 					</div>
 				<?php
 				}
-			}
-
-		public function carga_traducciones () {
-
-			$locale = function_exists ('determine_locale') ? determine_locale() : (is_admin() && function_exists ('get_user_locale') ? get_user_locale() : get_locale());
-			$locale = apply_filters ('plugin_locale', $locale, $this->domain);
-			unload_textdomain ($this->domain);
-			load_textdomain ($this->domain, $this->dirname . '/lang/' . $this->domain . '-' . $locale . '.mo');
-			load_plugin_textdomain ($this->domain, false, $this->dirname . '/lang');
 			}
 
 		public function enlaces_accion ($damelinks, $plugin) {
